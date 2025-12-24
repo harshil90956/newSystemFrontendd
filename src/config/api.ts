@@ -17,7 +17,7 @@ export const api = axios.create({
 
 api.interceptors.request.use((config) => {
   try {
-    const token = localStorage.getItem('auth_token');
+     const token = sessionStorage.getItem('auth_token') || localStorage.getItem('auth_token');
     const hasAuthHeader = Boolean((config.headers as any)?.Authorization || (config.headers as any)?.authorization);
     if (token && !hasAuthHeader) {
       config.headers = {
