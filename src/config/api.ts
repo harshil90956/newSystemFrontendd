@@ -9,7 +9,7 @@ if (!API_BASE_URL) {
 export const api = axios.create({
   baseURL: API_BASE_URL,
   withCredentials: true,
-  timeout: 30_000,
+  timeout: 10 * 60 * 1000,
   headers: {
     Accept: 'application/json',
   },
